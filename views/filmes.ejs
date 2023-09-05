@@ -1,0 +1,28 @@
+<h1 class="mb-4" style="text-align: center;">Lista de filmes</h1>
+<div class="container mt-5">
+    
+    <!-- mostrar filmes -->
+    <div class="row mt-5">
+        <% filmes.forEach(filme => { %>
+            <div class="col-md-4 mb-4 filmeCard">
+                <div>
+                    <div class="cartaz">
+                    <img src="/uploads/<%- filme.cartaz %>" class="card-img-top cartaz" alt="Cartaz">
+                    </div>
+                    <div>
+                        <h5><%- filme.titulo %></h5>
+                        <p ><strong>Sinopse: </strong> <%- filme.sinopse %></p>
+                        <p ><strong>Elenco: </strong> <%- filme.elenco %></p>
+                        <p ><strong>Direcão: </strong> <%- filme.direcao %></p>
+                        <a href="/filme/edit/:<%- filme.id %>" class="btn btn-warning">
+                            <i class="bi-pencil-square"></i> Editar
+                        </a>
+                        <a href="/filme/delete/<%- filme.id %>" class="btn btn-danger">
+                            <i class="bi-trash"></i> Excluir
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+</div>
