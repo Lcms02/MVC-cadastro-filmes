@@ -17,9 +17,9 @@ async function addFilme(req, res) {
 }
 
 async function deleteFilme(req, res) {
-    const { id } = req.body;
-    await Filme.deleteFilme(id);
+    await Filme.deleteFilme(req.params.id);
     res.redirect('/filme');
+    console.log(req.params.id);
 }
 
 function updateFilme(req, res) {
@@ -35,6 +35,11 @@ function updateFilme(req, res) {
         return filme;
     });
     res.redirect('/filme');
+}
+
+function editFilme(req, res) {
+    const filme = filmes.find(filme => filme.id == req.params.id);
+    res.render('editFilme', { filme });
 }
 
 module.exports = { getFilmes, addFilme, deleteFilme, updateFilme};

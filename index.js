@@ -69,9 +69,7 @@ app.use((req, res, next) => {
 
 // Rotas
 
-app.get('/', (req, res) => {
-    res.render('home');
-});
+
 
 app.get('/cadastrar', (req, res) => {
     res.render('cadastrar');
@@ -90,19 +88,20 @@ app.get('/logout', (req, res) => {
     userController.logout(req, res);
 });
 
-app.get('/filme/delete/id', (req, res) => {
+app.get('/filme/delete/:id', (req, res) => {
     filmeController.deleteFilme(req, res);
 });
 
-app.get('/filme/edit/id', (req, res) => {
+app.get('/filme/edit/:id', (req, res) => {
     filmeController.updateFilme(req, res);
 });
 
 app.post('/filme', upload.single('filetoupload'), filmeController.addFilme);
 app.get('/filme', filmeController.getFilmes);
 app.post('/filme', filmeController.addFilme);
-app.delete('/filme', filmeController.deleteFilme);
-app.put('/filme', filmeController.updateFilme);
+app.delete('/filme/:id', filmeController.deleteFilme);
+app.put('/filme/:id', filmeController.updateFilme);
+
 
 
 app.listen(port, () => {

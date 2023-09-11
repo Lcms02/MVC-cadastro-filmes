@@ -1,0 +1,35 @@
+    <!-- Editarfilmes -->
+    <form action="/filme/edit/<%- filme.filmeId %>" method="post">
+        <div class="row">
+            <div class="col-md-12" style="display: flex; justify-content: center; padding: 0;">
+                <div class="card" id="card_form">
+                    <div class="form-group">
+                        <label for="nome">titulo do filme</label>
+                        <input type="text" name="titulo" class="form-control mb-2" id="titulo" placeholder="Digite o titulo do filme" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sinopse">Sinopse</label>
+                        <input type="text" name="sinopse" class="form-control mb-2" id="sinopse" placeholder="Digite a sinopse do filme" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="elenco">elenco</label>
+                        <input type="text" name="elenco" class="form-control mb-2" id="elenco" placeholder="Digite o elenco do filme" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="direcao">direcao</label>
+                        <input type="text" name="direcao" class="form-control mb-2" id="direcao" placeholder="Digite a equipe de direcao do filme" required>
+                    </div>
+                    <div class="form-group ">
+                        <label for="filetoupload">Cartaz</label>
+                        <div class="custom-file mt-2">
+                            <input type="file" name="filetoupload" class="custom-file-input" id="filetoupload" required>
+                            <label class="custom-file-label" for="filetoupload"></label>
+                        </div>
+                        <div class="form-group text-center">
+                            <button type="submit" class="btn">Adicionar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
